@@ -1,0 +1,153 @@
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 20px;
+  }
+
+  .header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .header .user-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .header .user-menu img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .header .user-menu .dropdown {
+    position: relative;
+  }
+
+  .header .user-menu .dropdown-menu {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    min-width: 200px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+
+  .header .user-menu .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .header .user-menu:hover .dropdown .dropdown-menu {
+    display: block;
+  }
+
+  .header .user-menu .dropdown-menu a {
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+  }
+
+  .header .user-menu .dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    display: block;
+  }
+  .fa,
+  .fas {
+    font-weight: 900;
+  }
+  .fa,
+  .far,
+  .fas {
+    font-family: "Font Awesome 5 Free";
+  }
+  .fa,
+  .fab,
+  .fad,
+  .fal,
+  .far,
+  .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+  }
+  .fa-bars:before {
+    content: "\f0c9";
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #f30808fd;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+</style>
+<script>
+  function menu() {
+    const submenu = document.getElementById("sidebar");
+    let menuSideBar = document.getElementById("menuSideBar");
+    if(menuSideBar.className == "change"){
+        submenu.style.display ="none";
+    }else{
+        submenu.style.display ="block";
+    }
+    menuSideBar.classList.toggle("change");
+  }
+
+</script>
+<header class="header">
+  <div>
+    <a href="#" onclick="menu()" id="menuSideBar" class="change">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </a>
+  </div>
+  <div class="logo">MyApp</div>
+  <div class="user-menu">
+    <img src="https://via.placeholder.com/40" alt="User Avatar" />
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle" aria-expanded="false">
+        <span>Username</span>
+      </a>
+      <div class="dropdown-menu">
+        <a href="#">Profile</a>
+        <a href="#">Messages</a>
+        <a href="#">Settings</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,145 @@
+<style>
+  .sidebar {
+    padding: 0;
+    margin: 0;
+    min-height: 95vh;
+    background-color: #343a40;
+    max-height: 95vh;
+    overflow-y: scroll;
+  }
+  .sidebar ul ul {
+    padding-left: 20px;
+    display: none;
+  }
+  .nav-sidebar .nav-link p {
+    display: inline;
+    margin: 0;
+    white-space: normal;
+  }
+  .main-sidebar .brand-text,
+  .main-sidebar .logo-xl,
+  .main-sidebar .logo-xs,
+  .sidebar .nav-link p,
+  .sidebar .user-panel .info {
+    transition: margin-left 0.3s linear, opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .nav-sidebar .nav-link > .right,
+  .nav-sidebar .nav-link > p > .right {
+    position: absolute;
+    right: 1rem;
+    top: 0.7rem;
+  }
+  .fa,
+  .fas {
+    font-weight: 900;
+  }
+  .nav-sidebar .menu-is-opening > .nav-link i.right,
+  .nav-sidebar .menu-is-opening > .nav-link svg.right,
+  .nav-sidebar .menu-open > .nav-link i.right,
+  .nav-sidebar .menu-open > .nav-link svg.right {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  .nav-sidebar .nav-item > .nav-link .right {
+    transition: -webkit-transform ease-in-out 0.3s;
+    transition: transform ease-in-out 0.3s;
+    transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+  }
+  .fa-angle-left:before {
+    content: "\f104";
+  }
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+  .sidebar-mini .main-sidebar .nav-link,
+  .sidebar-mini-md .main-sidebar .nav-link,
+  .sidebar-mini-xs .main-sidebar .nav-link {
+    width: calc(250px - 0.5rem * 2);
+    transition: width ease-in-out 0.3s;
+  }
+
+  .brand-link {
+    border-bottom: 1px solid #4b545c;
+    color: rgba(241, 234, 234, 0.8);
+  }
+  .brand-link p,
+  .brand-link i,
+  .brand-link a {
+    color: rgba(241, 234, 234, 0.8);
+  }
+</style>
+<link rel="stylesheet" href="/fontawesome-free/css/all.min.css" />
+<div class="sidebar">
+  <ul class="nav nav-pills nav-sidebar flex-column">
+    <li class="nav-item brand-link">
+      <a class="nav-link btn-group">
+        <i class="nav-icon fas fa-tachometer-alt"></i>
+        <p>Dashboard</p></a
+      >
+    </li>
+    <li class="nav-item brand-link">
+      <a class="nav-link btn-group" onclick="toggleSubmenu(event, 'menu1')">
+        <i class="nav-icon fas fa-table"></i>
+        <p>SAMPLE <i class="fas fa-angle-left right"></i></p
+      ></a>
+      <ul id="menu1" class="nav nav-treeview">
+        <li class="nav-item"><a href="/sample/sample_dev/" class="nav-link">Sample Dev</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Màu mới</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">FAB</a></li>
+      </ul>
+    </li>
+    <li class="nav-item brand-link">
+      <a class="nav-link btn-group" onclick="toggleSubmenu(event, 'menu2')">
+        <i class="nav-icon fas fa-edit"></i>
+        <p>Form biểu DEV <i class="fas fa-angle-left right"></i></p
+      ></a>
+      <ul id="menu2" class="nav nav-treeview">
+        <li class="nav-item"><a href="#" class="nav-link"> PS </a></li>
+        <li class="nav-item"><a href="#" class="nav-link"> IF </a></li>
+        <li class="nav-item"><a href="#" class="nav-link"> Label (pad) </a></li>
+        <li class="nav-item"><a href="#" class="nav-link"> Int L Test </a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"> Int L Test 2 </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"> Int L Test 3 </a>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link"> Label </a></li>
+        <li class="nav-item"><a href="#" class="nav-link"> SC </a></li>
+        <li class="nav-item"><a href="#" class="nav-link"> SPIS </a></li>
+        <li class="nav-item"><a href="#" class="nav-link"> Cover </a></li>
+        <li class="nav-item"><a href="#" class="nav-link"> CP </a></li>
+        <li class="nav-item"><a href="#" class="nav-link"> SS </a></li>
+      </ul>
+    </li>
+    <li class="nav-item brand-link">
+      <a class="nav-link btn-group" onclick="toggleSubmenu(event, 'menu3')">
+        <i class="nav-icon fas fa-chart-pie"></i>
+        <p>REPORT <i class="fas fa-angle-left right"></i></p
+      ></a>
+      <ul id="menu3" class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="#" class="nav-link"> Report chart </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"> Màu mới chart </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  function toggleSubmenu(event, submenuId) {
+    event.preventDefault();
+    let array = ["menu1", "menu2", "menu3"];
+    array.forEach((element) => {
+      let submenu1 = document.getElementById(element);
+      submenu1.style.display = "none";
+    });
+    const submenu = document.getElementById(submenuId);
+    submenu.style.display =
+      submenu.style.display === "block" ? "none" : "block";
+  }
+</script>

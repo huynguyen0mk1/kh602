@@ -1,0 +1,28 @@
+* {
+  /* border-style: solid !important;
+  border-width: 1px !important;
+  border-color: #000 !important; */
+}
+.main-footer {
+  background-color: #343a40;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 99vh;
+}
+.content {
+  flex: 1;
+}
+#table_sample_dev  td{
+min-width: 150px;
+max-width: 300px;
+}
+#table_sample_dev  td:first-child{
+  min-width: 50px;
+  max-width: 60px;
+  }
